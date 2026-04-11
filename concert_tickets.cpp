@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+
+  int n, m;
+  if (!(cin >> n >> m))
+    return 0;
+
+  multiset<int> tickets;
+  for (int i = 0; i < n; i++) {
+    int temp;
+    cin >> temp;
+    tickets.insert(temp);
+  }
+
+  for (int i = 0; i < m; i++) {
+    int max_price;
+    cin >> max_price;
+
+    auto it = tickets.upper_bound(max_price);
+
+    if (it == tickets.begin()) {
+      cout << -1 << "\n";
+    } else {
+      --it;
+      cout << *it << "\n";
+      tickets.erase(it);
+    }
+  }
+
+  return 0;
+}
