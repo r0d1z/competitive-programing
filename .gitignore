@@ -1,5 +1,13 @@
+# Ignora tudo por padrão
 *
 
+# Permite diretórios (essencial para as regras abaixo funcionarem em subpastas)
+!*/
+
+# Exceções para arquivos que queremos rastrear
 !*.cpp
 !*.md
 !*.gitignore
+!*.h
+!*.hpp
+!Makefile
